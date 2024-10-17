@@ -17,6 +17,8 @@ local manager = game:GetService "VirtualInputManager"
 local runservice = game:GetService "RunService"
 local players = game:GetService "Players"
 
+local options = getrenv()._G.PlayerData.Options
+
 local playertype = {"Left", "Right"}
 local connections = { }
 local codes = {
@@ -44,8 +46,8 @@ function main()
 
     local maxArrows = match.MaxArrows
     local codes = codes [ maxArrows ]
-    local controls = maxArrows < 5 --and options
-        --or options.ExtraKeySettings [tostring (maxArrows)]
+    local controls = maxArrows < 5 and options
+        or options.ExtraKeySettings [tostring (maxArrows)]
 
     container = sort(container)
     longNotes = sort(longNotes)
