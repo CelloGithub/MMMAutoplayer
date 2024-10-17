@@ -1,6 +1,6 @@
 local UwUware = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
 local window = UwUware:Load("Monday Morning Misery", "Default")
-local autto = Library.newTab("Autoplayer", "7733960981")
+local autto = UwUware.newTab("Autoplayer", "7733960981")
 local IsAnimeFan = true
 
 autto.newToggle("Toggle Autoplayer", "Toggles the autoplayer", true, function(IsAnimeFan)
