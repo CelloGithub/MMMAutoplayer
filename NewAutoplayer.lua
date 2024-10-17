@@ -10,14 +10,6 @@ autto.newKeybind("Close GUI", "A Keybind to close the gui", function(key)
     window:Close()
 end)
 
-window:AddBind {
-    key = Enum.KeyCode.Quote,
-    text = "Close GUI",
-    callback = function()
-        UwUware:Close()
-    end
-}
-
 if not game:IsLoaded() then game.Loaded:Wait() end
 
 local replicatedstorage = game:GetService "ReplicatedStorage"
