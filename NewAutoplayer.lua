@@ -3,11 +3,7 @@ local window = UwUware:Load("Monday Morning Misery", "Default")
 local autto = UwUware.newTab("Autoplayer", "7733960981")
 local IsAnimeFan = true
 
-autto.newToggle("Toggle Autoplayer", "Toggles the autoplayer", true, function(istoggled)
-	if istoggled then
-		IsAnimeFan = true
-	else
-		IsAnimeFan = false
+autto.newToggle("Toggle Autoplayer", "Toggles the autoplayer", true, function(IsAnimeFan)
 end)
 
 autto.newKeybind("Close GUI", "A Keybind to close the gui", function(key)
@@ -20,8 +16,6 @@ local replicatedstorage = game:GetService "ReplicatedStorage"
 local manager = game:GetService "VirtualInputManager"
 local runservice = game:GetService "RunService"
 local players = game:GetService "Players"
-
-local options = getrenv()._G.PlayerData.Options
 
 local playertype = {"Left", "Right"}
 local connections = { }
@@ -50,8 +44,8 @@ function main()
 
     local maxArrows = match.MaxArrows
     local codes = codes [ maxArrows ]
-    local controls = maxArrows < 5 and options
-        or options.ExtraKeySettings [tostring (maxArrows)]
+    local controls = maxArrows < 5 --and options
+        --or options.ExtraKeySettings [tostring (maxArrows)]
 
     container = sort(container)
     longNotes = sort(longNotes)
@@ -114,8 +108,6 @@ function getMatch()
 end
 
 --
-
-UwUware:Init()
 
 while true do wait(1)
     if UwUware == nil then break else
