@@ -3,7 +3,11 @@ local window = UwUware:Load("Monday Morning Misery", "Default")
 local autto = UwUware.newTab("Autoplayer", "7733960981")
 local IsAnimeFan = true
 
-autto.newToggle("Toggle Autoplayer", "Toggles the autoplayer", true, function(IsAnimeFan)
+autto.newToggle("Toggle Autoplayer", "Toggles the autoplayer", true, function(istoggled)
+	if istoggled then
+		IsAnimeFan = true
+	else
+		IsAnimeFan = false
 end)
 
 autto.newKeybind("Close GUI", "A Keybind to close the gui", function(key)
